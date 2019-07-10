@@ -1,0 +1,390 @@
+
+@import 'variables';
+
+html, body {
+    font-family: $base__font-family;
+    font-size: 14px;
+    background-color: $light-bg;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    color: $gray-600;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+    font-weight:$font-weight-bold;
+}
+
+h6 {
+    font-size: $h5-font-size;
+    font-weight: $font-weight-normal;
+}
+
+.phone-book {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-list-container {
+    flex: 1 1 auto;
+    background-color: $white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+h2.contacts-list-header {
+    text-align:center;
+}
+
+.contacts-list-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    .button {
+        align-self: center;
+        margin-left: 10px;
+        margin-bottom: -5px;
+
+        svg {
+            width: 36px;
+            height: 36px;
+
+            path {
+                fill: $gray-400;
+            }
+        }
+    }
+}
+
+.contacts-list {
+    margin: 30px 20px 20px 10px;
+}
+
+.contact {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .info-part {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        .like-avatar {
+            height: 54px;
+            width: 54px;
+            border-radius: 60px;
+            margin-right: 10px;
+            background-color: $gray-200;
+        }
+
+        .like-avatar.male {
+            background-color: $background-blue;
+        }
+
+        .like-avatar.female {
+            background-color: $background-pink;
+        }
+
+        .main-info {
+            display: flex;
+            flex-flow: column wrap;
+
+            .name {
+                font-weight: 500;
+            }
+
+            .phone {
+                color: $gray-600;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+.button:hover {
+    cursor: pointer;
+
+    svg {
+        path {
+            fill: $gray-600;
+        }
+    }
+}
+
+.button {
+    align-self: flex-start;
+    
+    margin-left: 10px;
+
+    svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+            fill: $gray-400;
+        }
+    }
+}
+
+.modal-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .modal-container {
+        background-color: $white;
+        padding: 35px;
+        min-width: 100px;
+        min-height: 100px;
+        margin-top: 50px;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .changes-in-contacts {
+        max-height: 70vh;
+        overflow-y: auto;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .modal-container.left {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .close {
+        position: absolute;
+        right: 12px;
+        top: 9px;
+        width: 24px;
+        height: 24px;
+        opacity: 0.3;
+    }
+
+    .close:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 24px;
+        width: 2px;
+        background-color: $gray-600;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+.btn {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    padding: 10px 20px;
+    margin-left: 10px;
+
+    &.btn-primary {
+        background-color: $highlighter-blue;
+        color: $white;
+
+        &:hover {
+            background-color: $highlighter-blue-lightern;
+        }
+    }
+
+    &.btn-default {
+        background-color: $white;
+        border: 1px solid $gray-500;
+        color: $black;
+
+        &:hover {
+            border: 1px solid $highlighter-blue;
+            color: $highlighter-blue;
+        }
+    }
+}
+
+.download-button {
+    text-transform: uppercase;
+    align-self: center;
+    color: $gray-500 !important;
+
+    &:hover {
+        color: $highlighter-blue !important;
+    }
+}
+
+.edit-contact-form {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 15px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid $gray-400;
+
+    background-color: $white;
+    &:active,
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border-color: $highlighter-blue;
+    }
+}
+
+.radio-group {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right:9px;
+    label {
+        color:$gray-600;
+    }
+}
+
+.radio-group-row {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 5px;
+}
+
+.warning {
+    background-color: $highlighter-yellow;
+    padding: 10px;
+    margin-top: 20px;
+    max-width: 172px;
+    text-align: center;
+    color: $gray-700;
+    position: relative;
+
+    .close {
+        right: 2px;
+        top: 5px;
+
+
+        &:before,
+        &:after {
+            height: 10px;
+            width: 2px;
+        }
+    }
+}
+
+.files-footer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+.custom-file-input {
+    color: transparent;
+    border:0;
+    max-width:150px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+
+.custom-file-input::before {
+    content: 'Upload csv file';
+    color: $gray-600;
+    display: inline-block;
+    background: $white;
+    border: 1px solid $gray-500;
+    border-radius: 5px;
+    padding: 10px 20px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-transform:uppercase;
+    
+}
+
+.custom-file-input:hover::before {
+    border-color: $highlighter-blue;
+    color: $highlighter-blue !important;
+}
+
+.custom-file-input:active {
+    outline: 0;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

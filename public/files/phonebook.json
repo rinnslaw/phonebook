@@ -1,0 +1,26 @@
+﻿[
+  {
+    "id": "1",
+    "name": "Friedrich Schmidt",
+	"gender": "male",
+    "phone": "+49 30 901821"
+  },
+  {
+    "id": "2",
+    "name": "Bertha Müller",
+	"gender": "female",
+    "phone": "+49 30 901528"
+  },
+  {
+    "id": "3",	
+    "name": "Wolfgang Wagner",
+	"gender": "male",
+    "phone": "+49 30 245567"
+  },
+  {
+    "id": "4",
+    "name": "Martha Fischer",
+	"gender": "female",
+    "phone": "+49 30 128456"
+  }
+]
